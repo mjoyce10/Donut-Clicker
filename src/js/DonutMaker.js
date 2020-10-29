@@ -1,9 +1,14 @@
-var donutCount = 0;
+class DonutMaker {
 
-const addDonut = function(donutCount){
-    return donutCount + 1;
-}
+    constructor() {
+        this.donutCount = 0;
+    }
 
-const getDonutCount = function(donutCount){
-    return donutCount;
+    getDonutCount() {
+        return this.donutCount;
+    }
+
+    addDonut() {
+        this.donutCount += 1;
+    }
 }

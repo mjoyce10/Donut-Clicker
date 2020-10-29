@@ -2,6 +2,7 @@ class DonutMaker {
 
     constructor() {
         this.donutCount = 0;
+        this.autoClickerCount = 0;
     }
 
     getDonutCount() {
@@ -10,5 +11,14 @@ class DonutMaker {
 
     addDonut() {
         this.donutCount += 1;
+    }
+
+    getAutoClickerCount() {
+        return this.autoClickerCount;
+    }
+
+    addAutoClicker() {
+        this.autoClickerCount += 1;
+        this.donutCount -= 100;
     }
 }

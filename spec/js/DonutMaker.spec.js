@@ -220,7 +220,60 @@ describe('Donut maker should behave like a donut maker:', function(){
         })
     })
 
-})
+    describe('if donut multipliers have been purchased, donut maker should increase::', function(){
 
+        describe('the amount of subsequently added donuts by:', function(){
+
+            
+            describe('1.2 after the first donut multiplier is purchased', function(){
+                it('should add 1.2 donuts with one donut multiplier', function(){
+                    
+                    testDonutMaker.donutMultiplierCount = 1;
+                    testDonutMaker.addDonut();
+                    
+                    expect(testDonutMaker.getDonutCount()).toBe(1.2);
+                })
+            })
+            
+            describe('by 1.2 to the xth power for subsequent multipliers', function(){
+                it('should add 2.48832 donuts with five donut multipliers', function(){
+                    
+                    testDonutMaker.donutMultiplierCount = 5;
+                    testDonutMaker.addDonut();
+                    
+                    expect(testDonutMaker.getDonutCount()).toBe(2.49);
+                })
+            })
+        })
+
+        describe('the amount of subsequently added auto clickers  by:', function(){
+
+            
+            describe('1.2 after the first donut multiplier is purchased', function(){
+                it('should add 1.2 auto clickers with one donut multiplier', function(){
+                    
+                    testDonutMaker.donutCount = 100;
+                    testDonutMaker.donutMultiplierCount = 1;
+                    testDonutMaker.addAutoClicker();
+                    
+                    expect(testDonutMaker.getAutoClickerCount()).toBe(1.2);
+                })
+            })
+            
+            describe('by 1.2 to the xth power for subsequent multipliers', function(){
+                it('should add 2.48832 auto clickers with five donut multipliers', function(){
+                    
+                    testDonutMaker.donutCount = 100;
+                    testDonutMaker.donutMultiplierCount = 5;
+                    testDonutMaker.addAutoClicker();
+                    
+                    expect(testDonutMaker.getAutoClickerCount()).toBe(2.49);
+                })
+            })
+        })
+    })
+        
+})
+    
 
 

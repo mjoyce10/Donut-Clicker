@@ -13,7 +13,10 @@ class DonutMaker {
     }
 
     addDonut() {
-        this.donutCount += 1;
+        if (this.donutMultiplierCount >= 1)
+            this.donutCount += +Math.pow(1.2, this.donutMultiplierCount).toFixed(2)
+        else
+            this.donutCount += 1;
     }
 
     addDonutByAutoClicker() {
@@ -31,8 +34,16 @@ class DonutMaker {
     addAutoClicker() {
         if (this.donutCount >= this.autoClickerPrice)
         {
+            if (this.donutMultiplierCount >= 1)
+            {
+                this.autoClickerCount += +Math.pow(1.2, this.donutMultiplierCount).toFixed(2)
+            }
+            else
+            {
+                this.autoClickerCount += 1;
+            }
+            
             this.donutCount -=  Math.round(this.autoClickerPrice);
-            this.autoClickerCount += 1;
             this.autoClickerPrice += this.autoClickerPrice * .10; 
         }
     }

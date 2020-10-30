@@ -38,7 +38,7 @@ describe('Donut maker should behave like a donut maker:', function(){
             })
         })
         
-        describe('getAutoClickerCount returns current number of auto clickers', function(){
+        describe('getDonutMultiplierCount returns current number of donut multipliers', function(){
             it('should return 0 for new donut maker', function(){
                 expect(testDonutMaker.getDonutMultiplierCount()).toBe(0);
             })
@@ -122,52 +122,50 @@ describe('Donut maker should behave like a donut maker:', function(){
     describe('donut maker should increase the cost of:', function(){
 
         describe('a second auto clicker', function(){
-            it('should increase the cost of a second auto clicker by an additional ten percent', function(){
+            it('after purchasing one auto clicker, the new cost (for the second auto clicker) increases by an additional ten percent', function(){
                 
-                testDonutMaker.donutCount = 210;
+                testDonutMaker.donutCount = 100;
+                testDonutMaker.addAutoClicker();
                 
-                testDonutMaker.addAutoClicker();
-                testDonutMaker.addAutoClicker();
-                expect(testDonutMaker.getDonutCount()).toBe(0);
+                expect(testDonutMaker.autoClickerPrice).toBe(110);
             })
         })
 
         describe('every additional auto clicker', function(){
-            it('should increase the cost of every additional auto clicker by an additional ten percent', function(){
+            it('after purchasing a 5th auto clicker, the new cost (for the 6th auto clicker) increases by an additional ten percent', function(){
                 
                 testDonutMaker.donutCount = 1000;
                 
-                for (let i=0; i < 6; i++)
+                for (let i=0; i < 5; i++)
                 {
                     testDonutMaker.addAutoClicker();
                 }
                 
-                expect(testDonutMaker.getDonutCount()).toBe(229);
+                expect(testDonutMaker.autoClickerPrice).toBe(161.051);
             })
         })
 
         describe('a second donut multiplier', function(){
-            it('should increase the cost of a second donut multiplier by an additional ten percent', function(){
+            it('after purchasing one donut multiplier, the new cost (for the second donut multiplier) increases by an additional ten percent', function(){
                 
-                testDonutMaker.donutCount = 21;
+                testDonutMaker.donutCount = 10;
+                testDonutMaker.addDonutMultiplier();
                 
-                testDonutMaker.addDonutMultiplier();
-                testDonutMaker.addDonutMultiplier();
-                expect(testDonutMaker.getDonutCount()).toBe(0);
+                expect(testDonutMaker.donutMultiplierPrice).toBe(11);
             })
         })
 
         describe('every additional donut multiplier', function(){
-            it('should increase the cost of every additional donut multiplier by an additional ten percent', function(){
+            it('after purchasing a 5th donut multiplier, the new cost (for the 6th donut multiplier) increases by an additional ten percent', function(){
                 
                 testDonutMaker.donutCount = 100;
                 
-                for (let i=0; i < 6; i++)
+                for (let i=0; i < 5; i++)
                 {
                     testDonutMaker.addDonutMultiplier();
                 }
                 
-                expect(testDonutMaker.getDonutCount()).toBe(23);
+                expect(+testDonutMaker.donutMultiplierPrice.toFixed(2)).toBe(16.11);
             })
         })
     })
@@ -246,31 +244,31 @@ describe('Donut maker should behave like a donut maker:', function(){
             })
         })
 
-        describe('the amount of subsequently added auto clickers  by:', function(){
+        // describe('the amount of subsequently added auto clickers  by:', function(){
 
             
-            describe('1.2 after the first donut multiplier is purchased', function(){
-                it('should add 1.2 auto clickers with one donut multiplier', function(){
+        //     describe('1.2 after the first donut multiplier is purchased', function(){
+        //         it('should add 1.2 auto clickers with one donut multiplier', function(){
                     
-                    testDonutMaker.donutCount = 100;
-                    testDonutMaker.donutMultiplierCount = 1;
-                    testDonutMaker.addAutoClicker();
+        //             testDonutMaker.donutCount = 100;
+        //             testDonutMaker.donutMultiplierCount = 1;
+        //             testDonutMaker.addAutoClicker();
                     
-                    expect(testDonutMaker.getAutoClickerCount()).toBe(1.2);
-                })
-            })
+        //             expect(testDonutMaker.getAutoClickerCount()).toBe(1.2);
+        //         })
+        //     })
             
-            describe('by 1.2 to the xth power for subsequent multipliers', function(){
-                it('should add 2.48832 auto clickers with five donut multipliers', function(){
+        //     describe('by 1.2 to the xth power for subsequent multipliers', function(){
+        //         it('should add 2.48832 auto clickers with five donut multipliers', function(){
                     
-                    testDonutMaker.donutCount = 100;
-                    testDonutMaker.donutMultiplierCount = 5;
-                    testDonutMaker.addAutoClicker();
+        //             testDonutMaker.donutCount = 100;
+        //             testDonutMaker.donutMultiplierCount = 5;
+        //             testDonutMaker.addAutoClicker();
                     
-                    expect(testDonutMaker.getAutoClickerCount()).toBe(2.49);
-                })
-            })
-        })
+        //             expect(testDonutMaker.getAutoClickerCount()).toBe(2.49);
+        //         })
+        //     })
+        // })
     })
         
 })

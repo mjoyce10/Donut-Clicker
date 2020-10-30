@@ -3,6 +3,8 @@ class DonutMaker {
     constructor() {
         this.donutCount = 0;
         this.autoClickerCount = 0;
+        this.donutMultiplierCount = 0;
+        this.donutMultiplierPrice = 10;
         this.autoClickerPrice = 100;
     }
 
@@ -14,8 +16,16 @@ class DonutMaker {
         this.donutCount += 1;
     }
 
+    addDonutByAutoClicker() {
+        this.donutCount += this.autoClickerCount;
+    }
+
     getAutoClickerCount() {
         return this.autoClickerCount;
+    }
+
+    getDonutMultiplierCount(){
+        return this.donutMultiplierCount;
     }
 
     addAutoClicker() {
@@ -25,8 +35,14 @@ class DonutMaker {
             this.autoClickerCount += 1;
             this.autoClickerPrice += this.autoClickerPrice * .10; 
         }
+    }
 
-        else
-            this.autoClickerCount += 0
+    addDonutMultiplier() {
+        if (this.donutCount >= this.donutMultiplierPrice)
+        {
+            this.donutCount -=  Math.round(this.donutMultiplierPrice);
+            this.donutMultiplierCount += 1;
+            this.donutMultiplierPrice += this.donutMultiplierPrice * .10; 
+        }
     }
 }

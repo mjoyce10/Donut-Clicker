@@ -43,6 +43,18 @@ describe('Donut maker should behave like a donut maker:', function(){
                 expect(testDonutMaker.getDonutMultiplierCount()).toBe(0);
             })
         })
+
+        describe('should have donuts per click count:', function(){
+            it('should have a default count of 1', function(){
+                expect(testDonutMaker.donutsPerClick).toBe(1);
+            })
+        })
+        
+        describe('getDonutsPerClick returns donuts per click count', function(){
+            it('should return 1 for new donut maker', function(){
+                expect(testDonutMaker.getDonutsPerClick()).toBe(1);
+            })
+        })
     })
     
     describe('donut maker should add:', function(){
@@ -218,28 +230,32 @@ describe('Donut maker should behave like a donut maker:', function(){
         })
     })
 
-    describe('if donut multipliers have been purchased, donut maker should increase::', function(){
+    describe('if donut multipliers have been purchased, donut maker should increase:', function(){
 
         describe('the amount of subsequently added donuts by:', function(){
 
             
             describe('1.2 after the first donut multiplier is purchased', function(){
-                it('should add 1.2 donuts with one donut multiplier', function(){
+                it('donuts per click should equal 1.2', function(){
                     
-                    testDonutMaker.donutMultiplierCount = 1;
-                    testDonutMaker.addDonut();
+                    testDonutMaker.donutCount = 10;
+                    testDonutMaker.addDonutMultiplier();
                     
-                    expect(testDonutMaker.getDonutCount()).toBe(1.2);
+                    expect(testDonutMaker.getDonutsPerClick()).toBe(1.2);
                 })
             })
             
             describe('by 1.2 to the xth power for subsequent multipliers', function(){
                 it('should add 2.48832 donuts with five donut multipliers', function(){
                     
-                    testDonutMaker.donutMultiplierCount = 5;
-                    testDonutMaker.addDonut();
+                    testDonutMaker.donutCount = 100;
+
+                    for (let i = 0; i < 5; i++)
+                    {
+                        testDonutMaker.addDonutMultiplier();
+                    }
                     
-                    expect(testDonutMaker.getDonutCount()).toBe(2.49);
+                    expect(testDonutMaker.getDonutsPerClick()).toBe(2.49);
                 })
             })
         })

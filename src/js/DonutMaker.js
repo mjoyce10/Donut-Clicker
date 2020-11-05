@@ -51,7 +51,7 @@ class DonutMaker {
     addAutoClicker() {
         if (this.donutCount >= this.autoClickerPrice)
         {
-            this.donutCount -=  Math.round(this.autoClickerPrice);
+            this.donutCount -=  this.autoClickerPrice;
             this.autoClickerCount += 1;
             this.autoClickerPrice += this.autoClickerPrice * .10; 
         }
@@ -60,7 +60,7 @@ class DonutMaker {
     addDonutMultiplier() {
         if (this.donutCount >= this.donutMultiplierPrice)
         {
-            this.donutCount -=  Math.round(this.donutMultiplierPrice);
+            this.donutCount -= this.donutMultiplierPrice;
             this.donutMultiplierCount += 1;
             this.donutMultiplierPrice += this.donutMultiplierPrice * .10;
             this.increaseDonutsPerClick(); 

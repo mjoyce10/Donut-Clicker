@@ -69,9 +69,17 @@ addDonutMultiplierButton.addEventListener("click", function(){
     updateDonutMultiplierPrice();
 })
 
+const addDonutsByAutoClickers = function(){
+    setInterval(function(){
+        donutMaker.addDonutByAutoClicker();
+        updateDonutCounter();
+    }, 10000)
+}
+
 updateDonutCounter();
 updateDonutsPerClick();
 updateAutoClickerCounter();
 updateDonutMultiplierCounter();
 updateAutoClickerPrice();
 updateDonutMultiplierPrice();
+addDonutsByAutoClickers();

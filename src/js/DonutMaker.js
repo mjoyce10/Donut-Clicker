@@ -14,10 +14,7 @@ class DonutMaker {
     }
 
     addDonut() {
-        if (this.donutMultiplierCount >= 1)
-            this.donutCount += this.donutsPerClick;
-        else
-            this.donutCount += 1;
+        this.donutCount += this.donutsPerClick;
     }
 
     addDonutByAutoClicker() {

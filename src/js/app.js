@@ -1,6 +1,8 @@
 const donutCounterElement = document.querySelector('.donut-count');
 const donutMultiplierElement = document.querySelector('.donuts-per-click');
 const autoClickerCounterElement = document.querySelector('.auto-clicker-count');
+const autoClickerPriceElement = document.querySelector('.auto-clicker-price');
+const donutMultiplierPriceElement = document.querySelector('.donut-multiplier-price');
 
 // Buttons
 const addDonutButton = document.querySelector('.add-donut');
@@ -25,6 +27,14 @@ const updateAutoClickerCounter = function(){
     autoClickerCounterElement.innerText = donutMaker.getAutoClickerCount();
 }
 
+const updateAutoClickerPrice = function(){
+    autoClickerPriceElement.innerText = donutMaker.getAutoClickerPrice();
+}
+
+const updateDonutMultiplierPrice = function(){
+    donutMultiplierPriceElement.innerText = donutMaker.getDonutMultiplierPrice();
+}
+
 // Header Links
 aboutTheCompany.addEventListener("click", function(){
     alert("This is an about for the donut company.");
@@ -43,14 +53,18 @@ addAutoClickerButton.addEventListener("click", function(){
     donutMaker.addAutoClicker();
     updateAutoClickerCounter();
     updateDonutCounter();
+    updateAutoClickerPrice();
 })
 
 addDonutMultiplierButton.addEventListener("click", function(){
     donutMaker.addDonutMultiplier();
     updateDonutCounter();
     updateDonutMultiplier();
+    updateDonutMultiplierPrice();
 })
 
 updateDonutCounter();
 updateDonutMultiplier();
 updateAutoClickerCounter();
+updateAutoClickerPrice();
+updateDonutMultiplierPrice();

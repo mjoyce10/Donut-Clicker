@@ -52,6 +52,8 @@ aboutTheDeveloper.addEventListener("click", function(){
 addDonutButton.addEventListener("click", function(){
     donutMaker.addDonut();
     updateDonutCounter();
+    updateAutoClickerButton();
+    updateDonutMultiplierButton();
 })
 
 addAutoClickerButton.addEventListener("click", function(){
@@ -59,6 +61,8 @@ addAutoClickerButton.addEventListener("click", function(){
     updateAutoClickerCounter();
     updateDonutCounter();
     updateAutoClickerPrice();
+    updateAutoClickerButton();
+    updateDonutMultiplierButton();
 })
 
 addDonutMultiplierButton.addEventListener("click", function(){
@@ -67,7 +71,27 @@ addDonutMultiplierButton.addEventListener("click", function(){
     updateDonutMultiplierCounter();
     updateDonutsPerClick();
     updateDonutMultiplierPrice();
+    updateDonutMultiplierButton();
+    updateAutoClickerButton();
 })
+
+const addDonutsByAutoClickers = function(){
+    setInterval(function(){
+        donutMaker.addDonutByAutoClicker();
+        updateDonutCounter();
+        updateAutoClickerButton();
+        updateDonutMultiplierButton();
+    }, 1000)
+}
+
+const updateAutoClickerButton = function(){
+    addAutoClickerButton.disabled = donutMaker.donutCount < donutMaker.autoClickerPrice;
+}
+
+const updateDonutMultiplierButton = function(){
+    addDonutMultiplierButton.disabled = donutMaker.donutCount < donutMaker.donutMultiplierPrice;
+}
+
 
 updateDonutCounter();
 updateDonutsPerClick();
@@ -75,3 +99,6 @@ updateAutoClickerCounter();
 updateDonutMultiplierCounter();
 updateAutoClickerPrice();
 updateDonutMultiplierPrice();
+addDonutsByAutoClickers();
+updateAutoClickerButton();
+updateDonutMultiplierButton();

@@ -35,8 +35,16 @@ class DonutMaker {
         return this.autoClickerCount;
     }
 
+    getAutoClickerPrice() {
+        return Number(this.autoClickerPrice.toFixed(2));
+    }
+
     getDonutMultiplierCount(){
         return this.donutMultiplierCount;
+    }
+
+    getDonutMultiplierPrice(){
+        return Number(this.donutMultiplierPrice.toFixed(2));
     }
 
     getDonutsPerClick(){

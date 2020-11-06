@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="./src/css/style.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donuts</title>
@@ -8,11 +9,30 @@
 <body>
     <header>
         <nav>
-            <a class="about-the-company">About the Company</a> 
-            <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">Inspiration</a>
-            <a class="about-the-developer">About the Developer</a>
+            <a class="about-the-company-nav">About the Company</a> 
+            <a class="inspiration-nav">Inspiration</a>
+            <a class="about-the-developer-nav">About the Developer</a>
         </nav>
     </header>
+    <div class="about-company modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>About the Company</p>
+        </div>
+    </div>
+    <div class="cookie-clicker modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Cookie Clicker</p>
+          <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">Website</a>
+        </div>
+    </div>
+    <div class="about-me modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>About the Developer</p>
+        </div>
+    </div>
     <div class="main">
         <div class="stats">
             <h2>Number of Donuts:</h2>

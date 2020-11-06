@@ -5,8 +5,9 @@ class DonutMaker {
         this.autoClickerCount = 0;
         this.donutMultiplierCount = 0;
         this.donutMultiplierPrice = 10;
-        this.autoClickerPrice = 10;
+        this.autoClickerPrice = 100;
         this.donutsPerClick = 1;
+        this.donutsPerSecond = 0;
     }
     
     getDonutCount() {

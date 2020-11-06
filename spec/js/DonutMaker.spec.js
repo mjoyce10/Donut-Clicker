@@ -55,6 +55,18 @@ describe('Donut maker should behave like a donut maker:', function(){
                 expect(testDonutMaker.getDonutsPerClick()).toBe(1);
             })
         })
+
+        describe('should have donuts per second count:', function(){
+            it('should have a default count of 0', function(){
+                expect(testDonutMaker.donutsPerSecond).toBe(0);
+            })
+        })
+        
+        describe('getDonutsPerSecond returns donuts per second count', function(){
+            it('should return 0 for new donut maker', function(){
+                expect(testDonutMaker.getDonutsPerSecond()).toBe(0);
+            })
+        })
     })
     
     describe('donut maker should add:', function(){

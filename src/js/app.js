@@ -1,5 +1,6 @@
 const donutCounterElement = document.querySelector('.donut-count');
 const donutsPerClickElement = document.querySelector('.donuts-per-click');
+const donutsPerSecondElement = document.querySelector('.donuts-per-second');
 const donutMultiplierCounterElement = document.querySelector('.donut-multiplier-count');
 const autoClickerCounterElement = document.querySelector('.auto-clicker-count');
 const autoClickerPriceElement = document.querySelector('.auto-clicker-price');
@@ -22,6 +23,10 @@ const updateDonutCounter = function(){
 
 const updateDonutsPerClick = function(){
     donutsPerClickElement.innerText = donutMaker.getDonutsPerClick();
+}
+
+const updateDonutsPerSecond = function(){
+    donutsPerSecondElement.innerText = donutMaker.getDonutsPerSecond();
 }
 
 const updateAutoClickerCounter = function(){
@@ -63,6 +68,7 @@ addAutoClickerButton.addEventListener("click", function(){
     updateAutoClickerPrice();
     updateAutoClickerButton();
     updateDonutMultiplierButton();
+    updateDonutsPerSecond();
 })
 
 addDonutMultiplierButton.addEventListener("click", function(){
@@ -73,6 +79,7 @@ addDonutMultiplierButton.addEventListener("click", function(){
     updateDonutMultiplierPrice();
     updateDonutMultiplierButton();
     updateAutoClickerButton();
+    updateDonutsPerSecond();
 })
 
 const addDonutsByAutoClickers = function(){
@@ -95,6 +102,7 @@ const updateDonutMultiplierButton = function(){
 
 updateDonutCounter();
 updateDonutsPerClick();
+updateDonutsPerSecond();
 updateAutoClickerCounter();
 updateDonutMultiplierCounter();
 updateAutoClickerPrice();

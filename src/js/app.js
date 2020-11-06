@@ -10,6 +10,7 @@ const donutMultiplierPriceElement = document.querySelector('.donut-multiplier-pr
 const addDonutButton = document.querySelector('.add-donut');
 const addAutoClickerButton = document.querySelector('.add-auto-clicker');
 const addDonutMultiplierButton = document.querySelector('.add-donut-multiplier');
+const resetGameButton = document.querySelector('.reset');
 
 // Header Elements
 const aboutTheCompany = document.querySelector('.about-the-company');
@@ -82,6 +83,14 @@ addDonutMultiplierButton.addEventListener("click", function(){
     updateDonutsPerSecond();
 })
 
+resetGameButton.addEventListener("click", function(){
+    const resetGameConfirm = confirm("Are you sure you want to reset?");
+    if (resetGameConfirm)
+        {
+            location.reload();
+        }
+})
+
 const addDonutsByAutoClickers = function(){
     setInterval(function(){
         donutMaker.addDonutByAutoClicker();
@@ -98,7 +107,6 @@ const updateAutoClickerButton = function(){
 const updateDonutMultiplierButton = function(){
     addDonutMultiplierButton.disabled = donutMaker.donutCount < donutMaker.donutMultiplierPrice;
 }
-
 
 updateDonutCounter();
 updateDonutsPerClick();

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="./src/css/style.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donuts</title>
@@ -8,11 +9,35 @@
 <body>
     <header>
         <nav>
-            <a class="about-the-company">About the Company</a> 
-            <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">Inspiration</a>
-            <a class="about-the-developer">About the Developer</a>
+            <a class="about-the-company-nav">About the Company</a> 
+            <a class="inspiration-nav">Inspiration</a>
+            <a class="about-the-developer-nav">About the Developer</a>
         </nav>
     </header>
+    <div class="about-company modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>About the Company</h2>
+          <p><strong>Go Nuts Donut Shop</strong> was founded in 2020 by Maureen Joyce. With initial funding from We Can Code IT, Maureen was able to make this donut shop the most popular and successful donut shop to ever exist.</p>
+        </div>
+    </div>
+    <div class="cookie-clicker modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Inspiration</h2>
+          <p>Cookie Clicker was the inspiration for this project. Click <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">here</a> to play!</p>
+        </div>
+    </div>
+    <div class="about-me modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>About the Developer</h2>
+          <p>Maureen Joyce is a full-stack software developer from Cleveland, OH.</p>
+          <a href="https://www.linkedin.com/in/mjoyce10/">LinkedIn</a>
+          <a href="https://mjoyce10.github.io/">Portfolio</a>
+          <a href="https://github.com/mjoyce10">GitHub</a>
+        </div>
+    </div>
     <div class="main">
         <div class="stats">
             <h2>Number of Donuts:</h2>

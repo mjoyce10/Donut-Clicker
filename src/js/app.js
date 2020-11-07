@@ -12,9 +12,15 @@ const addAutoClickerButton = document.querySelector('.add-auto-clicker');
 const addDonutMultiplierButton = document.querySelector('.add-donut-multiplier');
 const resetGameButton = document.querySelector('.reset');
 
-// Header Elements
-const aboutTheCompany = document.querySelector('.about-the-company');
-const aboutTheDeveloper = document.querySelector('.about-the-developer');
+// Header/Modal Elements
+const aboutTheCompanyNav = document.querySelector('.about-the-company-nav');
+const aboutTheDeveloperNav = document.querySelector('.about-the-developer-nav');
+const inspirationNav = document.querySelector('.inspiration-nav');
+const aboutMeModal = document.querySelector('.about-me');
+const aboutCompanyModal = document.querySelector('.about-company');
+const cookieClickerModal = document.querySelector('.cookie-clicker')
+const modal = document.querySelectorAll('.modal');
+const close = document.querySelectorAll('.close');
 
 const donutMaker = new DonutMaker();
 
@@ -46,14 +52,6 @@ const updateDonutMultiplierPrice = function(){
     donutMultiplierPriceElement.innerText = donutMaker.getDonutMultiplierPrice();
 }
 
-// Header Links
-aboutTheCompany.addEventListener("click", function(){
-    alert("This is an about for the donut company.");
-})
-
-aboutTheDeveloper.addEventListener("click", function(){
-    alert("This is an about for me.");
-})
 
 addDonutButton.addEventListener("click", function(){
     donutMaker.addDonut();
@@ -86,9 +84,9 @@ addDonutMultiplierButton.addEventListener("click", function(){
 resetGameButton.addEventListener("click", function(){
     const resetGameConfirm = confirm("Are you sure you want to reset?");
     if (resetGameConfirm)
-        {
-            location.reload();
-        }
+    {
+        location.reload();
+    }
 })
 
 const addDonutsByAutoClickers = function(){
@@ -107,6 +105,36 @@ const updateAutoClickerButton = function(){
 const updateDonutMultiplierButton = function(){
     addDonutMultiplierButton.disabled = donutMaker.donutCount < donutMaker.donutMultiplierPrice;
 }
+
+// Header/Modal EL
+aboutTheCompanyNav.addEventListener("click", function(){
+    aboutCompanyModal.style.display = "block";
+})
+
+aboutTheDeveloperNav.addEventListener("click", function(){
+    aboutMeModal.style.display = "block";
+})
+
+inspirationNav.addEventListener("click", function(){
+    cookieClickerModal.style.display = "block";
+})
+
+close.forEach(btn => {
+    btn.addEventListener("click", function(){
+        modal.forEach(modal => {
+            modal.style.display = "none";
+        })
+    })
+});
+
+window.addEventListener("click", function(event) {
+    modal.forEach(modal => {
+
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    })
+});
 
 updateDonutCounter();
 updateDonutsPerClick();

@@ -2,16 +2,25 @@
 <html lang="en">
 <head>
     <link href="./src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varela+Round&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donuts</title>
 </head>
 <body>
     <header>
+        <h1>GO NUTS DONUT SHOP</h1>
+        <hr />
         <nav>
-            <a class="about-the-company-nav">About the Company</a> 
-            <a class="inspiration-nav">Inspiration</a>
-            <a class="about-the-developer-nav">About the Developer</a>
+            <div>
+                <a class="about-the-company-nav">About the Company</a> 
+            </div>
+            <div>
+                <a class="inspiration-nav">Inspiration</a>
+            </div>
+            <div>
+                <a class="about-the-developer-nav">About the Developer</a>
+            </div>
         </nav>
     </header>
     <div class="about-company modal">
@@ -40,28 +49,31 @@
     </div>
     <div class="main">
         <div class="stats">
-            <h2>Number of Donuts:</h2>
             <h2 class="donut-count">initial amount</h2>
-            <h2>Donuts Automatically Produced Per Second:</h2>
+            <h3 class="donuts-produced">Donuts Produced</h3>
+            <div class="flex">
+                <div class="donut-multiplier-div">
+                    <h2>Donut Multipliers:</h2>
+                    <h2 class="donut-multiplier-count">initial amount</h2>
+                    <p><strong>Donut Multiplier Price</strong>:</p>
+                    <p class="donut-multiplier-price">initial price</p>
+                    <button class="add-donut-multiplier">Add Donut Multiplier</button>
+                </div>
+                <div class="click-donut-div">
+                    <img class="add-donut" src="./src/images/Donut.png" usemap="#donut">
+                    <h3 class="donuts-per-click">initial amount</h3>
+                </div>
+                <div class="auto-clicker-div">
+                    <h2>Auto-Clickers:</h2>
+                    <h2 class="auto-clicker-count">initial amount</h2>
+                    <p><strong>Auto-Clicker Price</strong>:</p>
+                    <p class="auto-clicker-price">initial price</p>
+                    <button class="add-auto-clicker">Add Auto-Clicker</button>
+                </div>
+            </div>
             <h2 class="donuts-per-second">initial amount</h2>
-            <h2>Number of Donut Multipliers:</h2>
-            <h2 class="donut-multiplier-count">initial amount</h2>
-            <h2>Number of Auto-Clickers</h2>
-            <h2 class="auto-clicker-count">initial amount</h2>
         </div>
-        <div class="buttons">
-            <h3>Donuts per Click</h3>
-            <h3 class="donuts-per-click">initial amount</h3>
-            <button class="add-donut">Add Donut</button>
-            <p><strong>Auto-Clicker Price</strong>:</p>
-            <p class="auto-clicker-price">initial price</p>
-            <button class="add-auto-clicker">Add Auto-Clicker</button>
-            <p><strong>Donut Multiplier Price</strong>:</p>
-            <p class="donut-multiplier-price">initial price</p>
-            <button class="add-donut-multiplier">Add Donut Multiplier</button>
-        </div>
-        <div>
-            <br />
+        <div class="reset-div">
             <button class="reset">RESET GAME</button>
         </div>
     </div>

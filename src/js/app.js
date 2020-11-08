@@ -29,11 +29,19 @@ const updateDonutCounter = function(){
 }
 
 const updateDonutsPerClick = function(){
-    donutsPerClickElement.innerText = donutMaker.getDonutsPerClick();
+    let donutsPerClick = donutMaker.getDonutsPerClick();
+    if (donutsPerClick === 1)
+        donutsPerClickElement.innerText = `${donutsPerClick} Donut Per Click`;
+    else
+        donutsPerClickElement.innerText = `${donutsPerClick} Donuts Per Click`;
 }
 
 const updateDonutsPerSecond = function(){
-    donutsPerSecondElement.innerText = donutMaker.getDonutsPerSecond();
+   let donutsPerSecond = donutMaker.getDonutsPerSecond(); 
+    if (donutsPerSecond === 1)
+        donutsPerSecondElement.innerText = `${donutsPerSecond} Donut Automatically Produced Per Second`;
+    else
+        donutsPerSecondElement.innerText = `${donutsPerSecond} Donuts Automatically Produced Per Second`;
 }
 
 const updateAutoClickerCounter = function(){

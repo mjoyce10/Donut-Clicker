@@ -5,12 +5,14 @@ const donutMultiplierCounterElement = document.querySelector('.donut-multiplier-
 const autoClickerCounterElement = document.querySelector('.auto-clicker-count');
 const autoClickerPriceElement = document.querySelector('.auto-clicker-price');
 const donutMultiplierPriceElement = document.querySelector('.donut-multiplier-price');
+const donutsProducedLabel = document.querySelector('.donuts-produced');
 
 // Buttons
 const addDonutButton = document.querySelector('.add-donut');
 const addAutoClickerButton = document.querySelector('.add-auto-clicker');
 const addDonutMultiplierButton = document.querySelector('.add-donut-multiplier');
 const resetGameButton = document.querySelector('.reset');
+const buttons = document.querySelectorAll('.button');
 
 // Header/Modal Elements
 const aboutTheCompanyNav = document.querySelector('.about-the-company-nav');
@@ -26,6 +28,10 @@ const donutMaker = new DonutMaker();
 
 const updateDonutCounter = function(){
     donutCounterElement.innerText = donutMaker.getDonutCount();
+    if (donutMaker.getDonutCount() == 1)
+        donutsProducedLabel.innerText = "Donut";
+    else
+        donutsProducedLabel.innerText = "Donuts";
 }
 
 const updateDonutsPerClick = function(){
@@ -53,11 +59,11 @@ const updateDonutMultiplierCounter = function(){
 }
 
 const updateAutoClickerPrice = function(){
-    autoClickerPriceElement.innerText = donutMaker.getAutoClickerPrice();
+    autoClickerPriceElement.innerText = `Price: ${donutMaker.getAutoClickerPrice()} Donuts`;
 }
 
 const updateDonutMultiplierPrice = function(){
-    donutMultiplierPriceElement.innerText = donutMaker.getDonutMultiplierPrice();
+    donutMultiplierPriceElement.innerText = `Price: ${donutMaker.getDonutMultiplierPrice()} Donuts`;
 }
 
 

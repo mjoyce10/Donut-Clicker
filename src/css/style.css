@@ -14,8 +14,8 @@ header {
 
 h1 {
   margin: 0;
-  padding-top: 2rem;
-  font-size: 4rem;
+  padding-top: 1rem;
+  font-size: 3rem;
   text-align: center;
 }
 
@@ -26,8 +26,8 @@ hr {
 nav {
   display: flex;
   justify-content: space-evenly;
-  padding: 1rem;
-  font-size: 2rem;
+  padding: 0.75rem;
+  font-size: 1.5rem;
 }
 
 nav a {
@@ -41,6 +41,7 @@ nav div {
 
 nav a:hover {
   border-bottom: 3px solid #e6a582;
+  transition: border-bottom 1s;
 }
 
 /* Modals */
@@ -63,7 +64,14 @@ nav a:hover {
   margin: auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
+  text-align: center;
+}
+
+.modal-content a {
+  text-decoration: none;
+  color: #693b30;
+  font-weight: 700;
 }
 
 .close {
@@ -79,17 +87,33 @@ nav a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+.cookie {
+  height: 15rem;
+  width: auto;
+}
+
+.modal-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+
+.modal-link {
+  width: 10rem;
+}
 
 /* Body Text */
 .donut-count {
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
   margin-bottom: 0;
+  margin-top: 2rem;
 }
 
 .donuts-produced {
   text-align: center;
   margin-top: 0;
+  font-size: 1.5rem;
 }
 
 .flex {
@@ -99,8 +123,7 @@ nav a:hover {
 
 .flex > div {
   text-align: center;
-  padding: 3rem 0;
-  width: 17rem;
+  width: 20rem;
 }
 
 .click-donut-div {
@@ -109,12 +132,37 @@ nav a:hover {
 
 .donuts-per-second {
   text-align: center;
+  padding-top: 2rem;
+}
+
+.sale {
+  background-color: #f8f4e1;
+  padding-top: 3rem;
+  border: 0.25rem solid #693b30;
+  border-radius: 2rem;
+  height: 400px;
+  margin-top: 4rem;
+}
+
+.sale-img {
+  height: 8rem;
+  width: auto;
+}
+
+.sale h2 {
+  font-size: 1.75rem;
 }
 
 /* Buttons */
 .add-donut {
   user-select: none;
-  border-radius: 7rem;
+  border-radius: 8rem;
+  width: 20rem;
+  height: auto;
+}
+
+.add-donut:hover {
+  cursor: pointer;
 }
 
 .add-donut:active {
@@ -126,15 +174,23 @@ button {
   font-size: 1.5rem;
   text-align: center;
   border-radius: 10px;
-  box-shadow: 0 9px #999;
+  border: 0.05rem solid #693b30;
+  background-color: #f1dfd6;
+  font-family: "Varela Round", sans-serif;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 button:active {
-  box-shadow: 0 5px #666;
+  box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
 
 .reset-div {
   text-align: center;
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }

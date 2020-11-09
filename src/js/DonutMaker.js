@@ -55,7 +55,7 @@ class DonutMaker {
 
     getDonutsPerSecond(){
         this.calculateDonutsPerSecond();
-        return this.donutsPerSecond;
+        return Number(this.donutsPerSecond.toFixed(2));
     }
 
     addAutoClicker() {

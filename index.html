@@ -2,23 +2,32 @@
 <html lang="en">
 <head>
     <link href="./src/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Varela+Round&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donuts</title>
 </head>
 <body>
     <header>
+        <h1>GO NUTS DONUT SHOP</h1>
+        <hr />
         <nav>
-            <a class="about-the-company-nav">About the Company</a> 
-            <a class="inspiration-nav">Inspiration</a>
-            <a class="about-the-developer-nav">About the Developer</a>
+            <div>
+                <a class="about-the-company-nav">About the Company</a> 
+            </div>
+            <div>
+                <a class="inspiration-nav">Inspiration</a>
+            </div>
+            <div>
+                <a class="about-the-developer-nav">About the Developer</a>
+            </div>
         </nav>
     </header>
     <div class="about-company modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>About the Company</h2>
-          <p><strong>Go Nuts Donut Shop</strong> was founded in 2020 by Maureen Joyce. With initial funding from We Can Code IT, Maureen was able to make this donut shop the most popular and successful donut shop to ever exist.</p>
+          <p><strong>Go Nuts Donut Shop</strong> was founded in 2020 by Maureen Joyce. Starting a donut shop had been a dream of hers since she was 22. With initial funding from We Can Code IT, Maureen was able to make this donut shop the most popular and successful donut shop to ever exist.</p>
         </div>
     </div>
     <div class="cookie-clicker modal">
@@ -26,43 +35,51 @@
           <span class="close">&times;</span>
           <h2>Inspiration</h2>
           <p>Cookie Clicker was the inspiration for this project. Click <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/">here</a> to play!</p>
+          <a target="_blank" href="https://orteil.dashnet.org/cookieclicker/"><img src="./src/images/Cookie.png" class="cookie" /></a>
         </div>
     </div>
     <div class="about-me modal">
         <div class="modal-content">
           <span class="close">&times;</span>
           <h2>About the Developer</h2>
-          <p>Maureen Joyce is a full-stack software developer from Cleveland, OH.</p>
-          <a href="https://www.linkedin.com/in/mjoyce10/">LinkedIn</a>
-          <a href="https://mjoyce10.github.io/">Portfolio</a>
-          <a href="https://github.com/mjoyce10">GitHub</a>
+          <p>Maureen Joyce is a full-stack software developer from Cleveland, OH. She is currently attending We Can Code IT with an expected graduation of mid-December. In her free time, Maureen enjoys playing disc golf, making music, and eating donuts, of course.
+          <div class="modal-links">
+            <a class="modal-link" target="_blank" href="https://www.linkedin.com/in/mjoyce10/">LinkedIn</a>
+            <a class="modal-link" target="_blank" href="https://mjoyce10.github.io/">Portfolio</a>
+            <a class="modal-link" target="_blank" href="https://github.com/mjoyce10">GitHub</a>
+        </div>
         </div>
     </div>
     <div class="main">
         <div class="stats">
-            <h2>Number of Donuts:</h2>
-            <h2 class="donut-count">initial amount</h2>
-            <h2>Donuts Automatically Produced Per Second:</h2>
-            <h2 class="donuts-per-second">initial amount</h2>
-            <h2>Number of Donut Multipliers:</h2>
-            <h2 class="donut-multiplier-count">initial amount</h2>
-            <h2>Number of Auto-Clickers</h2>
-            <h2 class="auto-clicker-count">initial amount</h2>
+            <div class="donut-count-div">
+                <h2 class="donut-count">initial amount</h2>
+                <h3 class="donuts-produced">Donuts</h3>
+            </div>
+            <div class="flex">
+                <div class="donut-multiplier-div sale">
+                    <img src="./src/images/Baker.png" class="sale-img" />
+                    <h2>Donut Multipliers:</h2>
+                    <h2 class="donut-multiplier-count">initial amount</h2>
+                    <p class="donut-multiplier-price">initial price</p>
+                    <button class="add-donut-multiplier button">Purchase</button>
+                </div>
+                <div class="click-donut-div">
+                    <img class="add-donut" src="./src/images/Donut.png" usemap="#donut">
+                    <h3 class="donuts-per-click">initial amount</h3>
+                    <h2 class="donuts-per-second">initial amount</h2>
+                </div>
+                <div class="auto-clicker-div sale">
+                    <img src="./src/images/Cursor.png" class="sale-img" />
+                    <h2>Auto-Clickers:</h2>
+                    <h2 class="auto-clicker-count">initial amount</h2>
+                    <p class="auto-clicker-price">initial price</p>
+                    <button class="add-auto-clicker button">Purchase</button>
+                </div>
+            </div>
         </div>
-        <div class="buttons">
-            <h3>Donuts per Click</h3>
-            <h3 class="donuts-per-click">initial amount</h3>
-            <button class="add-donut">Add Donut</button>
-            <p><strong>Auto-Clicker Price</strong>:</p>
-            <p class="auto-clicker-price">initial price</p>
-            <button class="add-auto-clicker">Add Auto-Clicker</button>
-            <p><strong>Donut Multiplier Price</strong>:</p>
-            <p class="donut-multiplier-price">initial price</p>
-            <button class="add-donut-multiplier">Add Donut Multiplier</button>
-        </div>
-        <div>
-            <br />
-            <button class="reset">RESET GAME</button>
+        <div class="reset-div">
+            <button class="reset button">RESET GAME</button>
         </div>
     </div>
     <script src="./src/js/DonutMaker.js"></script>

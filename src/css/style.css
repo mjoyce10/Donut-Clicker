@@ -1,0 +1,196 @@
+body {
+  margin: 0;
+  background-color: #e6a582;
+  font-family: "Varela Round", sans-serif;
+  color: #693b30;
+}
+
+/* Header and Nav Bar */
+header {
+  background-color: #693b30;
+  color: #e6a582;
+  font-family: "Bebas Neue", cursive;
+}
+
+h1 {
+  margin: 0;
+  padding-top: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+hr {
+  border: 1px solid #e6a582;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.75rem;
+  font-size: 1.5rem;
+}
+
+nav a {
+  border-bottom: 3px solid transparent;
+}
+
+nav div {
+  width: 16rem;
+  text-align: center;
+}
+
+nav a:hover {
+  border-bottom: 3px solid #e6a582;
+  transition: border-bottom 1s;
+}
+
+/* Modals */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  text-align: center;
+}
+
+.modal-content a {
+  text-decoration: none;
+  color: #693b30;
+  font-weight: 700;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.cookie {
+  height: 15rem;
+  width: auto;
+}
+
+.modal-links {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+}
+
+.modal-link {
+  width: 10rem;
+}
+
+/* Body Text */
+.donut-count {
+  text-align: center;
+  font-size: 5rem;
+  margin-bottom: 0;
+  margin-top: 2rem;
+}
+
+.donuts-produced {
+  text-align: center;
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex > div {
+  text-align: center;
+  width: 20rem;
+}
+
+.click-donut-div {
+  text-align: center;
+}
+
+.donuts-per-second {
+  text-align: center;
+  padding-top: 2rem;
+}
+
+.sale {
+  background-color: #f8f4e1;
+  padding-top: 3rem;
+  border: 0.25rem solid #693b30;
+  border-radius: 2rem;
+  height: 400px;
+  margin-top: 4rem;
+}
+
+.sale-img {
+  height: 8rem;
+  width: auto;
+}
+
+.sale h2 {
+  font-size: 1.75rem;
+}
+
+/* Buttons */
+.add-donut {
+  user-select: none;
+  border-radius: 8rem;
+  width: 20rem;
+  height: auto;
+}
+
+.add-donut:hover {
+  cursor: pointer;
+}
+
+.add-donut:active {
+  transform: translateY(5px);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 0.05rem solid #693b30;
+  background-color: #f1dfd6;
+  font-family: "Varela Round", sans-serif;
+  box-shadow: 0 5px #999;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  box-shadow: 0 2px #666;
+  transform: translateY(4px);
+}
+
+.reset-div {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
